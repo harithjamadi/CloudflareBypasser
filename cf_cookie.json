@@ -1,22 +1,12 @@
 {
   "glp.se.gob.ar": {
     "domain": ".se.gob.ar",
-    "expiry": 1788090109,
+    "expiry": 1788092809,
     "httpOnly": true,
     "name": "cf_clearance",
     "path": "/",
     "sameSite": "None",
     "secure": true,
-    "value": "jfMcDjYEyUu2zcxOE5vOvokzYJ5MzEscWxmB6VA6jCw-1756554109-1.2.1.1-PLsok.v1RlgIlhL3g3.weDnLvxeohPX_e4vRh9r38xeq_4ZAG264AHVHEg3fRYU8tgw4q.2x6mt6ymDYtUKDvH.vV7mPp9JhZLz__ZZdpZHeNUelzm2CZYuPZuSokrB14m2R8TlrkGW31skrECUo_NmADQrPjuerB9eEnWb0kRTtj7ChktDhFYocjfgLF_8g5auQ4ssRnzpxKxong5q7bciWlnMSg3LhuCRIeMNeqSU"
-  },
-  "www.bursamalaysia.com": {
-    "domain": ".bursamalaysia.com",
-    "expiry": 1787769704,
-    "httpOnly": true,
-    "name": "cf_clearance",
-    "path": "/",
-    "sameSite": "None",
-    "secure": true,
-    "value": "DPFlmOWbDCp4iBfLHmoxyXHBolBjwhHJ1SjwvfqsVFo-1756233704-1.2.1.1-jH1KseRqcEnI3RhmlI3Xsl6UaKUaYIiR.XTKVW1GP9kPvuu_vTXR99Pl0HyLJ6IbNg0LNRuF5aW7ZhVs_Ff_tcXrLpYAD8gHoQ3vJK4H0384OdQQjZQuQashuxEEfgf6fvzj5KwpNO1Auae7YC_nZBu2eZFwjar_AGBN5Y5eiAu6PukPyIOZ_Tk0lcadfFfneiug7Kivs2ruxHlmfDH7WkVzhxHcm505EQO9M4njlMc"
+    "value": "YGbXtbL1PnPt9HBBcZ1z9vEkHHYO.bwEyagvZn1hoeE-1756556809-1.2.1.1-KtrP4OGcS9zNpXnoayjxTcrclc4XhRdQwd7G429SQeIhC.vI00DKThI9QRLa6JRwxhNRSCeTD7hme8yPW.t3_d1JLsgUsgClS1VEiI3fQCfp_eu7DTcbZMSUINaaAfKsN1Zhi1r5mHq4B4FNypyU7LoA9YjWgpf4dFjmm3d6fOh4NUWFWZvaDRGBLnwpKiKT3wQ5Y42.jiTxc1lBtmy6hNACnyNmAbeosJvy9TMHw4Q"
   }
 }
