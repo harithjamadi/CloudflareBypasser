@@ -4,6 +4,7 @@ import json
 import os
 from urllib.parse import urlparse
 from selenium import webdriver
+from seleniumbase import Driver
 from selenium.webdriver.chrome.options import Options
 
 
@@ -33,11 +34,14 @@ def launch_driver(download_folder=""):
 # Function to solve Cloudflare challenge manually and capture cf_clearance
 # -----------------------------------------------------------------------------
 def bypasser(url, retries=30, delay=2, cookie_file="cf_cookie.json"):
-    driver = launch_driver()
-    driver.get(url)
+    # driver = launch_driver()
+    driver = Driver(uc=True)
+    # driver.get(url)
+    driver.uc_open_with_reconnect(url, 10)
 
     cf_cookie = None
     for attempt in range(retries):
+        driver.uc_gui_click_captcha()
         cookies = driver.get_cookies()
         for c in cookies:
             if c['name'] == 'cf_clearance':
