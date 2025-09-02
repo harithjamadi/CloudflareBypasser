@@ -1,2 +1,3 @@
-1. execute bypasser.py with url e.g (python bypasser.py "https://glp.se.gob.ar/biocombustible/reporte_precios.php")
-2. execute runner.py
+1. Change url in runner.py
+2. Execute runner.py
+3. See the magic happens
