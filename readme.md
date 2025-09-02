@@ -2,3 +2,7 @@
 2. Change url and element to capture in runner.py
 2. Execute runner.py
 3. See the magic happens
+
+
+things to update 
+- verify the cf clearance expiration
