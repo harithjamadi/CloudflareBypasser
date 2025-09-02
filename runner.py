@@ -1,13 +1,10 @@
-import json
-import os
 import logging
-from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from bypasser import bypasser
+from bypasser import useBypasser
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -33,38 +30,14 @@ def launch_driver(download_folder=""):
     return driver
 
 class Checking_RCT:
-    def __init__(self, cookie_file="cf_cookie.json"):
+    def __init__(self):
         self.driver = launch_driver()
-        self.cookie_file = cookie_file
-
-    def inject_cookie_and_open(self, url):
-        parsed = urlparse(url)
-        domain = parsed.netloc
-
-        if not os.path.exists(self.cookie_file):
-            logging.error(f"❌ Cookie file {self.cookie_file} not found")
-            raise FileNotFoundError(f"Cookie file {self.cookie_file} not found")
-
-        with open(self.cookie_file, "r", encoding="utf-8") as f:
-            cookies_dict = json.load(f)
-
-        if domain not in cookies_dict:
-            logging.warning(f"❌ No cookie found for domain {domain}")
-            bypasser(url, cookie_file=self.cookie_file)
-            with open(self.cookie_file, "r", encoding="utf-8") as f:
-                cookies_dict = json.load(f)
-
-        cookie_dict = cookies_dict[domain]
-
-        self.driver.get(f"https://{domain}")
-        self.driver.add_cookie(cookie_dict)
-        self.driver.get(url)
 
     def checkupdate(self, url, ind, ref, current_timepoint=None):
         try:
             if ind == 'selenium':
                 self.driver.set_page_load_timeout(60)
-                self.inject_cookie_and_open(url)
+                useBypasser(url, self.driver)
 
                 e1 = WebDriverWait(self.driver, 30).until(
                     EC.presence_of_element_located((By.XPATH, ref))
@@ -79,13 +52,22 @@ class Checking_RCT:
         self.driver.quit()
 
 
+# # usage:
+# a = Checking_RCT()
+# text = a.checkupdate("https://glp.se.gob.ar/biocombustible/reporte_precios.php", "selenium", "(//tr[contains(@class, 'impar')])[1]")
+# print(text)
+# a.end()
+
+
 if __name__ == "__main__":
-    a = Checking_RCT(cookie_file="cf_cookie.json")
+    a = Checking_RCT()
     text = a.checkupdate(
         "https://glp.se.gob.ar/biocombustible/reporte_precios.php",
         "selenium",
         "(//tr[contains(@class, 'impar')])[1]"
     )
+
     if text:
         print(text)
     a.end()
+
